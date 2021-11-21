@@ -10,7 +10,7 @@ def insertRecord(tweet):
 
 response = requests.get(
     'https://api.twitter.com/2/tweets/search/recent?query=Covid19&tweet.fields=id,created_at,geo,lang,possibly_sensitive,source&max_results=10',
-    headers={'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAAGMMVwEAAAAAV2PT0v2ZJZhKXsbabUc64KR2dUc%3DvL2ge6VI4dNNzZY5avYhBWhCZxDiBMVcPTXOxVTsUQW7KZZfud'})
+    headers={'Authorization': 'Bearer {token}'})
 
 responseJson = response.json()
 
@@ -35,7 +35,7 @@ while count < 2:
 
     next_response = requests.get(
         next_url,
-        headers={'Authorization': 'Bearer AAAAAAAAAAAAAAAAAAAAAGMMVwEAAAAAV2PT0v2ZJZhKXsbabUc64KR2dUc%3DvL2ge6VI4dNNzZY5avYhBWhCZxDiBMVcPTXOxVTsUQW7KZZfud'})
+        headers={'Authorization': 'Bearer {token}'})
 
     next_responseJson = next_response.json()
 
